@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="corPrimaria">#64649d</color>
+    <color name="corPrimariaEscura">#4d4b8e</color>
+    <color name="corAcentuada">#9a5093</color>
+
+    <color name="swipe_delete">#EF9A9A</color>
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "261390185459",
+    "firebase_url": "https://raisse-queiroz.firebaseio.com",
+    "project_id": "raisse-queiroz",
+    "storage_bucket": "raisse-queiroz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261390185459:android:e0a68effbdc9917938d886",
+        "android_client_info": {
+          "package_name": "com.appdate.raissequeiroz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261390185459-ven5a797mu89v92jg3rp0gpte1jei27n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appdate.raissequeiroz",
+            "certificate_hash": "302eb3906d962dbf4f2b4968d5e4e09939972209"
+          }
+        },
+        {
+          "client_id": "261390185459-nqeid8k3452b6bd6stjveqhafifqu83s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGKpzvm4TrOt3JrLtEaW88tJCZpnyf2oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261390185459-nqeid8k3452b6bd6stjveqhafifqu83s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

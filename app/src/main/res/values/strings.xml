@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Raisse Queiroz</string>
+    <string name="procedimento">Procedimento</string>
+    <string name="nome">Nome</string>
+    <string name="valor">Valor</string>
+    <string name="adp_valor">R$ %.2f</string>
+
+    <string name="data">Data</string>
+    <string name="hora">Hora</string>
+    <string name="salvar">Salvar</string>
+    <string name="novo_agendamento">Novo agendamento</string>
+    <string name="editar_agendamento">Editar agendamento</string>
+    <string name="conectar">Conectar</string>
+    <string name="sem_conexao">Sem conexão</string>
+
+    <array name="semana">
+        <item>Domingo</item>
+        <item>Segunda</item>
+        <item>Terça</item>
+        <item>Quarta</item>
+        <item>Quinta</item>
+        <item>Sexta</item>
+        <item>Sábado</item>
+    </array>
+</resources>
