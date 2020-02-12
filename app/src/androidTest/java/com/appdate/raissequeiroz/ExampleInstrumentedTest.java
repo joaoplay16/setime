@@ -1,11 +1,11 @@
-package com.appdate.raissequeiroz;
+package com.appdate.agendamento;
 
 import android.content.Context;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.appdate.raissequeiroz.util.DateUtils;
+import com.appdate.agendamento.util.DateUtils;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

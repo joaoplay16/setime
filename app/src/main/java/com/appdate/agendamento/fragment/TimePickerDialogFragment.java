@@ -1,4 +1,4 @@
-package com.appdate.raissequeiroz.fragment;
+package com.appdate.agendamento.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -9,8 +9,8 @@ import android.widget.TimePicker;
 
 import androidx.fragment.app.DialogFragment;
 
-import com.appdate.raissequeiroz.R;
-import com.appdate.raissequeiroz.util.DateUtils;
+import com.appdate.agendamento.R;
+import com.appdate.agendamento.util.DateUtils;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
@@ -27,7 +27,7 @@ public class TimePickerDialogFragment extends DialogFragment implements
 
         // Create a new instance of TimePickerDialog and return it
         return new TimePickerDialog(getActivity(), this, hour, minute,
-                DateFormat.is24HourFormat(getActivity()));
+                true);
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {

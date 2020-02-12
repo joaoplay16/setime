@@ -1,21 +1,15 @@
-package com.appdate.raissequeiroz.util;
+package com.appdate.agendamento.util;
 
 
 import android.content.Context;
-import android.os.Build;
-import android.util.Log;
 
-import androidx.annotation.RequiresApi;
 
-import com.appdate.raissequeiroz.R;
+import com.appdate.agendamento.R;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 
 public class DateUtils {
@@ -25,16 +19,20 @@ public class DateUtils {
         Calendar calendar = Calendar.getInstance();
 
         calendar.set(year, monthOfYear, dayOfMonth);
-        Date data = calendar.getTime();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy");
 
-        DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT);
-
-        return format.format(data);
+        return simpleDateFormat.format(calendar.getTime());
     }
 
     public static String timeToString(int hora, int min){
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(Calendar.HOUR, hora);
+//        calendar.set(Calendar.MINUTE, min);
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+//
+//        return simpleDateFormat.format(calendar.getTime());
         String h = String.valueOf(hora),
-               m = String.valueOf(min);
+                m = String.valueOf(min);
         if (hora < 10){
             h = "0" + h;
         }
@@ -42,7 +40,8 @@ public class DateUtils {
         if (min < 10){
             m = "0" + min;
         }
-        return h+":"+m;
+
+        return h + ":" + m;
     }
 
     public static String timeMilisToString(long dataEHora){
@@ -73,12 +72,15 @@ public class DateUtils {
     }
 
     public static String dateMilisToString(long data){
-        Calendar calendar = Calendar.getInstance();
-        DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT);
-        calendar.setTimeInMillis(data);
-        String dt = format.format(calendar.getTime());
+//        Calendar calendar = Calendar.getInstance();
+//        DateFormat format = DateFormat.getDateInstance(DateFormat.SHORT);
+//        calendar.setTimeInMillis(data);
+//        String dt = format.format(calendar.getTime());
 
-        return dt;
+        SimpleDateFormat simpleDateFormat =
+                new SimpleDateFormat("dd/MM/yy");
+
+        return simpleDateFormat.format(data);
     }
 
     public static Long stringToDateMilis(String data, String hora){
@@ -120,8 +122,6 @@ public class DateUtils {
 
         int dds = calendar.get(Calendar.DAY_OF_WEEK);
         String diaDaSemana = dias[dds-1];
-
-
 
         return diaDaSemana;
     }

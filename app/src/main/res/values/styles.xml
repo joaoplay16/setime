@@ -9,4 +9,9 @@
     </style>
 
     <style name="AppTheme" parent="TemaBase"/>
+
+    <style name="TemaBase.Agendamento">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">150dp</item>
+    </style>
 </resources>

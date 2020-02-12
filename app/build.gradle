@@ -4,7 +4,8 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.appdate.raissequeiroz"
+        multiDexEnabled true
+        applicationId "com.appdate.agendamento"
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
@@ -32,17 +33,18 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //Firebase
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
     implementation 'com.google.firebase:firebase-database:19.2.1'
 
     // Firebase UI
     implementation 'com.firebaseui:firebase-ui-database:3.3.1'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     def recyclerview_version = "1.1.0"
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
 
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.2'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

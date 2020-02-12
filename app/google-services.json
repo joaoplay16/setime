@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "261390185459",
-    "firebase_url": "https://raisse-queiroz.firebaseio.com",
-    "project_id": "raisse-queiroz",
-    "storage_bucket": "raisse-queiroz.appspot.com"
+    "project_number": "592457649845",
+    "firebase_url": "https://agendamento-b6a62.firebaseio.com",
+    "project_id": "agendamento-b6a62",
+    "storage_bucket": "agendamento-b6a62.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:261390185459:android:e0a68effbdc9917938d886",
+        "mobilesdk_app_id": "1:592457649845:android:55295431a89dea232db8fc",
         "android_client_info": {
-          "package_name": "com.appdate.raissequeiroz"
+          "package_name": "com.appdate.agendamento"
         }
       },
       "oauth_client": [
         {
-          "client_id": "261390185459-ven5a797mu89v92jg3rp0gpte1jei27n.apps.googleusercontent.com",
+          "client_id": "592457649845-6845mb5lepiuigljb6ama4m2d8sk1bft.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.appdate.raissequeiroz",
-            "certificate_hash": "302eb3906d962dbf4f2b4968d5e4e09939972209"
+            "package_name": "com.appdate.agendamento",
+            "certificate_hash": "6eef16f1a729f0cf98009e817908e1a010f8fac7"
           }
         },
         {
-          "client_id": "261390185459-nqeid8k3452b6bd6stjveqhafifqu83s.apps.googleusercontent.com",
+          "client_id": "592457649845-l8jdnmaesi49tjbtgaj8fhgkmkp9seub.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBGKpzvm4TrOt3JrLtEaW88tJCZpnyf2oo"
+          "current_key": "AIzaSyDuXcAsg5sjOcRjBtksBpbnVVP_CJHmhho"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "261390185459-nqeid8k3452b6bd6stjveqhafifqu83s.apps.googleusercontent.com",
+              "client_id": "592457649845-l8jdnmaesi49tjbtgaj8fhgkmkp9seub.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

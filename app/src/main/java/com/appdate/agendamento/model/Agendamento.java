@@ -1,11 +1,11 @@
-package com.appdate.raissequeiroz.model;
+package com.appdate.agendamento.model;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class Agendamento implements Serializable {
 
-    private String id;
+
     private String nomeCliente;
     private String procedimento;
     private Double valor;
@@ -21,13 +21,7 @@ public class Agendamento implements Serializable {
         this.dataEHora = dataEHora;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNomeCliente() {
         return nomeCliente;

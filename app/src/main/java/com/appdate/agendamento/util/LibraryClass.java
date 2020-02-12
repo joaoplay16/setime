@@ -1,4 +1,4 @@
-package com.appdate.raissequeiroz.util;
+package com.appdate.agendamento.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

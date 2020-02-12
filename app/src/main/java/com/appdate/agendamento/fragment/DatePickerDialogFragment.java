@@ -1,6 +1,5 @@
-package com.appdate.raissequeiroz.fragment;
+package com.appdate.agendamento.fragment;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
@@ -10,9 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import com.appdate.raissequeiroz.AddActivity;
-import com.appdate.raissequeiroz.R;
-import com.appdate.raissequeiroz.util.DateUtils;
+import com.appdate.agendamento.R;
+import com.appdate.agendamento.util.DateUtils;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
@@ -32,7 +30,6 @@ public class DatePickerDialogFragment extends DialogFragment implements
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        view.setMinDate(Calendar.getInstance().getTimeInMillis());
 
         TextInputEditText inputData = getActivity().findViewById(R.id.inputData);
         inputData.setText(DateUtils.dateToString(year, month, dayOfMonth));

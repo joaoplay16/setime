@@ -1,8 +1,8 @@
-package com.appdate.raissequeiroz;
+package com.appdate.agendamento;
 
 import android.content.Context;
 
-import com.appdate.raissequeiroz.util.DateUtils;
+import com.appdate.agendamento.util.DateUtils;
 
 import org.junit.Test;
 
