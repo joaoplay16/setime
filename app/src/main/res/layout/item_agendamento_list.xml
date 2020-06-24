@@ -24,32 +24,12 @@
 		android:fontFamily="sans-serif-black"
 		android:text="Procedimento" />
 
-	<TextView
-		android:id="@+id/txtDiaDaSemana"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/txtProcedimento"
-		android:layout_alignParentStart="true"
-		android:fontFamily="@font/allerta"
-		android:text="Dia"
-		android:layout_alignBottom="@id/txtData"
-		android:textSize="14sp" />
-	<TextView android:id="@+id/txtData"
-		android:text="Data"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginLeft="5dp"
-		android:fontFamily="@font/aldrich"
-		android:layout_below="@id/txtProcedimento"
-		android:layout_toEndOf="@id/txtDiaDaSemana" />
 
 	<TextView
 		android:id="@+id/txtHora"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignTop="@id/txtData"
-		android:layout_marginLeft="5dp"
-		android:layout_toRightOf="@id/txtData"
+		android:layout_below="@id/txtProcedimento"
 		android:fontFamily="@font/aldrich"
 		android:text="Hora" />
 	<TextView android:id="@+id/txtValor"
@@ -57,7 +37,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentEnd="true"
-		android:layout_alignTop="@id/txtData"
+		android:layout_alignTop="@id/txtHora"
 		android:fontFamily="@font/allerta"
 
 
