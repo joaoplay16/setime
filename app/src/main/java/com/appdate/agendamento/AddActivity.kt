@@ -29,6 +29,11 @@ class AddActivity : AppCompatActivity(), EventListener<DocumentSnapshot?> {
     private  var agendamentoRef: DocumentReference? = null
     private  var mAgendamentoRegistration: ListenerRegistration? = null
 
+    companion object {
+        const val KEY_AGENDAMENTO_ID = "key_agendamento_id"
+        const val COLLECTION_PATH = "agendamentos"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
@@ -44,7 +49,7 @@ class AddActivity : AppCompatActivity(), EventListener<DocumentSnapshot?> {
                 .getStringExtra(KEY_AGENDAMENTO_ID)
         if (agendamentoId != null) {
             agendamentoRef = mFirestore
-                    .collection("agendamentos")
+                    .collection(COLLECTION_PATH)
                     .document(agendamentoId.toString())
             btnSalvar.text = "Editar"
         } else {
@@ -92,7 +97,7 @@ class AddActivity : AppCompatActivity(), EventListener<DocumentSnapshot?> {
     }
 
     fun pushAgendamento(agendamento: Agendamento) {
-        val agendamentoRef = mFirestore.collection("agendamentos")
+        val agendamentoRef = mFirestore.collection(COLLECTION_PATH)
         agendamentoRef.add(agendamento).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(this@AddActivity,
@@ -230,8 +235,5 @@ class AddActivity : AppCompatActivity(), EventListener<DocumentSnapshot?> {
         }
     }
 
-    companion object {
-        const val KEY_AGENDAMENTO_ID = "key_agendamento_id"
-        const val COLLECTION_PATH = "agendamentos"
-    }
+
 }

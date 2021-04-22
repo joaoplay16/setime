@@ -121,7 +121,7 @@ abstract class FirestoreAdapter<VH : RecyclerView.ViewHolder?>(private var mQuer
 
     fun groupByDate(snapshotList: List<DocumentSnapshot>) {
         mConsolidatedList.clear()
-        if (snapshotList.size > 0) {
+        if (snapshotList.isNotEmpty()) {
             val groupedHashMap = groupDataIntoHashMap(snapshotList)
             for (date in groupedHashMap.keys) {
                 val dateItem = DateItem()
