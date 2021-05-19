@@ -12,6 +12,7 @@
     <string name="editar_agendamento">Editar agendamento</string>
     <string name="conectar">Conectar</string>
     <string name="sem_conexao">Sem conexão</string>
+    <string name="edit">Editar</string>
 
     <array name="semana">
         <item>Domingo</item>

@@ -13,7 +13,7 @@
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         app:reverseLayout="true"/>
-    <!-- Empty list (pizza guy) view -->
+
     <LinearLayout
         android:id="@+id/view_empty"
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
 
     </LinearLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_gravity="bottom|center|right"
+        android:layout_gravity="bottom|center|end"
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

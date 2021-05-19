@@ -24,8 +24,6 @@ open class AgendamentoAdapter(mQuery: Query?, private var mListener:OnAgendament
         fun onAgendamentoSelected(snapshot: DocumentSnapshot?)
     }
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val v: View
@@ -55,8 +53,8 @@ open class AgendamentoAdapter(mQuery: Query?, private var mListener:OnAgendament
     }
 
     class DataViewHolder internal constructor(v: View?) : RecyclerView.ViewHolder(v!!) {
-        var txtData: TextView
-        var txtDiaDaSemana: TextView
+        var txtData: TextView = itemView.findViewById(R.id.txtData)
+        var txtDiaDaSemana: TextView = itemView.findViewById(R.id.txtDiaDaSemana)
         fun bind(dateItem: DateItem) {
             txtData.text = dateItem.date
             val dataDoSnapshotInMilis = stringToDateMilis(dateItem.date, null)
@@ -76,18 +74,13 @@ open class AgendamentoAdapter(mQuery: Query?, private var mListener:OnAgendament
             }
             txtDiaDaSemana.text = strDiaDaSemana
         }
-
-        init {
-            txtData = itemView.findViewById(R.id.txtData)
-            txtDiaDaSemana = itemView.findViewById(R.id.txtDiaDaSemana)
-        }
     }
 
     class AgendamentoViewHolder(v: View?) : RecyclerView.ViewHolder(v!!) {
-        var txtNome: TextView
-        var txtProcedimento: TextView
-        var txtValor: TextView
-        var txtHora: TextView
+        var txtNome: TextView = itemView.findViewById(R.id.txtNome)
+        var txtProcedimento: TextView = itemView.findViewById(R.id.txtProcedimento)
+        var txtValor: TextView = itemView.findViewById(R.id.txtValor)
+        var txtHora: TextView = itemView.findViewById(R.id.txtHora)
         fun bind(snapshot: DocumentSnapshot?,
                  listener: OnAgendamentoSelectedListener?) {
             val agendamento = snapshot?.toObject(Agendamento::class.java)
@@ -97,13 +90,5 @@ open class AgendamentoAdapter(mQuery: Query?, private var mListener:OnAgendament
             txtHora.text = timeMilisToString(agendamento?.dataEHora)
             itemView.setOnClickListener { listener?.onAgendamentoSelected(snapshot) }
         }
-
-        init {
-            txtNome = itemView.findViewById(R.id.txtNome)
-            txtProcedimento = itemView.findViewById(R.id.txtProcedimento)
-            txtValor = itemView.findViewById(R.id.txtValor)
-            txtHora = itemView.findViewById(R.id.txtHora)
-        }
     }
-
 }

@@ -18,18 +18,19 @@ import com.appdate.agendamento.adapter.AgendamentoAdapter
 import com.appdate.agendamento.adapter.AgendamentoAdapter.AgendamentoViewHolder
 import com.appdate.agendamento.adapter.AgendamentoAdapter.OnAgendamentoSelectedListener
 import com.appdate.agendamento.adapter.GeneralItem
+import com.appdate.agendamento.databinding.FragmentListaGendamentoBinding
 import com.google.firebase.firestore.*
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 class AgendamentoFragmentList : Fragment(), OnAgendamentoSelectedListener {
+    private var _binding: FragmentListaGendamentoBinding? = null
+    private val binding get() = _binding!!
     private lateinit var mLayoutManager: LinearLayoutManager
-    private lateinit var mRecyclerView: RecyclerView
-    private lateinit var mEmptyView: LinearLayout
     private lateinit var mFirestore: FirebaseFirestore
     private lateinit var mAdapter: AgendamentoAdapter
     private lateinit var agendamentoRef: DocumentReference
     private lateinit var mQuery: Query
-    private fun configuraSwipe() {
+    private fun setupSwipe() {
         ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, 12) {
             override fun onMove(recyclerView: RecyclerView, holder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
                 return false
@@ -67,7 +68,7 @@ class AgendamentoFragmentList : Fragment(), OnAgendamentoSelectedListener {
                     super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                 }
             }
-        }).attachToRecyclerView(mRecyclerView)
+        }).attachToRecyclerView(binding.recyclerView)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,29 +82,35 @@ class AgendamentoFragmentList : Fragment(), OnAgendamentoSelectedListener {
     }
 
     override fun onCreateView(layoutInflater: LayoutInflater, viewGroup: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = layoutInflater.inflate(R.layout.fragment_lista_gendamento, viewGroup, false)
-        view.findViewById<View>(R.id.fabAdd).setOnClickListener { paramView: View? -> startActivity(Intent(activity, AddActivity::class.java)) }
-        mRecyclerView = view.findViewById(R.id.recyclerView)
-        mEmptyView = view.findViewById(R.id.view_empty)
-        mRecyclerView.setHasFixedSize(true)
-        mLayoutManager = LinearLayoutManager(activity)
-        mRecyclerView.layoutManager = mLayoutManager
-        mRecyclerView.adapter = mAdapter
-        configuraSwipe()
+        _binding = FragmentListaGendamentoBinding.inflate(layoutInflater, viewGroup, false)
+        val view = binding.root
+        setupSwipe()
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.fabAdd.setOnClickListener { paramView: View? -> startActivity(Intent(activity, AddActivity::class.java)) }
+        binding.recyclerView.setHasFixedSize(true)
+        mLayoutManager = LinearLayoutManager(activity)
+        binding.recyclerView.layoutManager = mLayoutManager
+        binding.recyclerView.adapter = mAdapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
     private fun carregarDados() {
         mQuery = mFirestore.collection("agendamentos")
                 .orderBy("dataEHora", Query.Direction.ASCENDING)
         mAdapter = object : AgendamentoAdapter(mQuery, this) {
             override fun onDataChanged() { //Log.d("TAG", "Item count" + getItemCount());
                 if (itemCount == 0) {
-                    mEmptyView.visibility = LinearLayout.VISIBLE
-                    mRecyclerView.visibility = RecyclerView.GONE
+                    binding.viewEmpty.visibility = LinearLayout.VISIBLE
+                    binding.recyclerView.visibility = RecyclerView.GONE
                 } else {
-                    mEmptyView.visibility = LinearLayout.GONE
-                    mRecyclerView.visibility = RecyclerView.VISIBLE
+                   binding.viewEmpty.visibility = LinearLayout.GONE
+                    binding.recyclerView.visibility = RecyclerView.VISIBLE
                 }
                 mAdapter.notifyDataSetChanged()
             }
@@ -120,17 +127,13 @@ class AgendamentoFragmentList : Fragment(), OnAgendamentoSelectedListener {
 
     override fun onResume() {
         super.onResume()
-        if (mAdapter != null) {
-            mAdapter.startListening()
-            mAdapter.notifyDataSetChanged()
-        }
+        mAdapter.startListening()
+        mAdapter.notifyDataSetChanged()
         // Log.d("TAG", "onResume");
     }
 
     override fun onPause() {
         super.onPause()
-        if (mAdapter != null) {
-            mAdapter.stopListening()
-        }
+        mAdapter.stopListening()
     }
 }
